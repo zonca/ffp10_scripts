@@ -19,7 +19,7 @@ LFI24M,LFI24S,LFI25M,LFI25S,LFI26M,LFI26S
 --effdir
 /project/projectdirs/planck/data/mission/lfi_ops_dx12
 --effdir_out
-/scratch3/scratchdirs/keskital/ffp10/fiducial_tod/foregrounds
+/scratch3/scratchdirs/zonca/ffp10/fiducial_tod/foregrounds
 --obtmask
 255
 --flagmask

@@ -19,7 +19,7 @@ LFI27M,LFI27S,LFI28M,LFI28S
 --effdir
 /project/projectdirs/planck/data/mission/lfi_ops_dx12
 --effdir_out
-/scratch3/scratchdirs/keskital/ffp10/fiducial_tod/cmb
+/scratch3/scratchdirs/zonca/ffp10/fiducial_tod/cmb
 --obtmask
 255
 --flagmask
