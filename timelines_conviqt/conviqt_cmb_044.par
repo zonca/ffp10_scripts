@@ -9,7 +9,7 @@
 --skyfile
 /project/projectdirs/planck/data/ffp10/sky/CMB/ffp10_lensed_scl_cmb_FREQ_alm.fits
 --beamfile
-/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_TCMB_HiRes/mb/mb_lfi_GRASPDETECTOR_qucs-raa_dBdTcmb.alm,/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_TCMB_HiRes/ib/ib_lfi_GRASPDETECTOR_qucs-raa_dBdTcmb.alm
+/global/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_TCMB_WF/mb/mb_lfi_GRASPDETECTOR_dx12_smear.alm,/global/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_TCMB_WF//ib/ib_lfi_GRASPDETECTOR_qucs-raa_dBdTcmb.alm
 --rimo
 /project/projectdirs/planck/data/mission/SIAM/LFI_RIMO_R3.00.fits
 --freq
