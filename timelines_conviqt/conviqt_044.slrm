@@ -24,9 +24,9 @@ date
 srun -n $ntasktot --ntasks-per-node=8 --ntasks-per-socket=4 -c 3 \
     $python -s $bin/toast_planck_exchange_conviqt.py @conviqt_cmb_044.par
 date
-#srun -n $ntasktot --ntasks-per-node=8 --ntasks-per-socket=4 -c 3 \
-#    $python -s $bin/toast_planck_exchange_conviqt.py @conviqt_fg_044.par
-#date
+srun -n $ntasktot --ntasks-per-node=8 --ntasks-per-socket=4 -c 3 \
+    $python -s $bin/toast_planck_exchange_conviqt.py @conviqt_fg_044.par
+date
 srun -n $ntasktot --ntasks-per-node=8 --ntasks-per-socket=4 -c 3 \
     $python -s $bin/toast_planck_exchange_conviqt.py @conviqt_fg_044_fsl.par
 date
