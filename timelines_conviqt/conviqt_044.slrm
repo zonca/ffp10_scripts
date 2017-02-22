@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#SBATCH --partition=regular
+#SBATCH --qos=special_planck
+#SBATCH --time=04:00:00
+#SBATCH --nodes=128
+#SBATCH --job-name=conviqt
+
+export OMP_NUM_THREADS=3
+let ntasktot=24*128/$OMP_NUM_THREADS
+
+unset TOAST_NO_MPI
+
+export PYTHONNOUSERSITE=1
+
+python=`which python3`
+echo $python
+
+echo $PYTHONPATH
+
+bin=$PREFIX/bin
+
+date
+srun -n $ntasktot --ntasks-per-node=8 --ntasks-per-socket=4 -c 3 \
+    $python -s $bin/toast_planck_exchange_conviqt.py @conviqt_cmb_044.par
+date
+#srun -n $ntasktot --ntasks-per-node=8 --ntasks-per-socket=4 -c 3 \
+#    $python -s $bin/toast_planck_exchange_conviqt.py @conviqt_fg_044.par
+#date
+srun -n $ntasktot --ntasks-per-node=8 --ntasks-per-socket=4 -c 3 \
+    $python -s $bin/toast_planck_exchange_conviqt.py @conviqt_fg_044_fsl.par
+date
