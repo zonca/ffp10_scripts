@@ -9,7 +9,7 @@
 --skyfile
 /project/projectdirs/planck/data/ffp10/sky/PSM/ffp10_fg_PSMDETECTOR_alm.fits
 --beamfile
-/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_PW00_HiRes/mb/mb_lfi_GRASPDETECTOR_qucs-raa_pwr+00.alm,/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_PW00_HiRes/ib/ib_lfi_GRASPDETECTOR_qucs-raa_pwr+00.alm,/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_PW00_HiRes/sl/sl_lfi_GRASPDETECTOR_qucs-raa_pwr+00.alm
+/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_PW00_Smeared/mb/mb_lfi_GRASPDETECTOR_qucs-raa_pwr+00_smear.alm,/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_PW00_Smeared/ib/ib_lfi_GRASPDETECTOR_qucs-raa_pwr+00.alm,/project/projectdirs/planck/data/ffp10/mission/beams/lfi/DX12_4pi_Beam_PW00_Smeared/sl/sl_lfi_GRASPDETECTOR_qucs-raa_pwr+00.alm
 --rimo
 /project/projectdirs/planck/data/mission/SIAM/LFI_RIMO_R3.00.fits
 --freq
