@@ -17,7 +17,7 @@ nsubchunk = 2
 isubchunk = 0
 
 path_output = maps
-file_root = npipe4v2
+file_root = ffp10
 write_map = T
 write_binmap = T
 write_wcov = F
