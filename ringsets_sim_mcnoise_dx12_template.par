@@ -22,7 +22,6 @@
 255
 --out
 ringsets/foregrounds_mc{mc}
---read_eff
 --add_noise
 --noisefile_simu
 /project/projectdirs/planck/data/mission/noise_lfi/dx12/lfi_psd_dx12_DETECTOR.fits
