@@ -37,7 +37,7 @@ iter_max = 1000
 cglimit = 1e-12
 
 nside_submap = 16
-nside_cross = 512
+nside_cross = 1024
 run_submap_test = F
 precond_width = 45
 
@@ -47,7 +47,7 @@ unit_tod = K_CMB
 
 #pixmode_cross = 3 # Temperature only
 pixmode_cross = 4 # Temperature+polarization
-pixlim_cross = 1e-3
+pixlim_cross = 1e-6
 
 pixmode_map = 2
 pixlim_map = 1e-2
