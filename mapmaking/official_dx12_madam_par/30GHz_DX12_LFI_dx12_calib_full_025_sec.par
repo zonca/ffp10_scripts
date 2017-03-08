@@ -1,0 +1,71 @@
+#-----------------------------------------------#
+#   Madam 3.8.3parameter file  
+#    prepared with madamFiles - v.7.0 - Madam 3.8.3and FITS 
+#    date: 2016-09-26 13:15:00
+#-----------------------------------------------#
+
+
+# Parameters for program Madam, version3.8.3
+   info             = 3
+# Simulation
+   simulation       = madamSIM_30GHz_Toi_LFI_dx12_calib_Range_full+.sim
+   use_satellite    = F
+   temperature_only = F
+   to_galactic      = T
+   tod_1            = signal
+   shift            = 0.0
+   flag_tod         = 6111248
+   flag_by_horn     = T
+   file_sampling    = TOODI%ACCTOODI%%sampling_od_LFI27M-00:-1%
+# Detectors
+   detector_1 = LFI27M
+   detector_2 = LFI27S
+   detector_3 = LFI28M
+   detector_4 = LFI28S
+# Optional parameters
+   dcomment      = 
+# Mission length
+   firstPID      = 3
+   lastPID       = 44072
+# Destriping scheme
+   kfirst        = T
+   ksecond       = F
+   kfilter       = T
+   mode_detweight = 2
+# Split mode - not-used
+   noloops_point = 1
+   noloops_time  = 1
+# Baseline
+   base_first    = 8
+# Resolution
+   nside_cross   = 1024
+   nside_map     = 1024
+   nside_submap  = 32
+# Degenerate pixels
+   pixmode_cross = 4
+   pixlim_cross  = 1e-06
+   pixlim_map    = 0.01
+# MPI
+   nsplit_mpi    = 12
+# 4D maps
+   nside_4Dmap   = 1024
+   npsi_4Dmap    = 4096
+#
+   rm_monopole   = F
+# Input maps
+   file_inmask   = TOODI%ACCTOODI%%mask_madam_30GHz:-1%
+# Output
+   path_output   = 
+   file_map = TOODI%ACCTOODI%%madam_IQUmap_LFI_dx12_calib_30GHz_DX12_full_025_sec:-1%
+   file_binmap = TOODI%ACCTOODI%%madam_bin_LFI_dx12_calib_30GHz_DX12_full_025_sec:-1%
+   file_hit = TOODI%ACCTOODI%%madam_hit_LFI_dx12_calib_30GHz_DX12_full_025_sec:-1%
+   file_base = TOODI%ACCTOODI%%madam_base_LFI_dx12_calib_30GHz_DX12_full_025_sec:-1%
+   file_matrix = TOODI%ACCTOODI%%madam_cc_LFI_dx12_calib_30GHz_DX12_full_025_sec:-1%
+   file_cov = TOODI%ACCTOODI%%madam_cov_LFI_dx12_calib_30GHz_DX12_full_025_sec:-1%
+   file_matrix_det = TOODI%ACCTOODI%%madam_cc_LFI_dx12_calib_30GHz_DX12_full_025_sec:-1%
+   file_summap_det = TOODI%ACCTOODI%%madam_summap_LFI_dx12_calib_30GHz_DX12_full_025_sec:-1%
+   file_4Dmap = madam_4D_LFI_dx12_calib_30GHz_DX12_full_025_sec.fits
+
+#-----------------------------------------------#
+#  End of madam parameter file
+#-----------------------------------------------#
