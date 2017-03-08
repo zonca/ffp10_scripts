@@ -22,7 +22,7 @@
 ffp10_maps/{cal}
 --dipole
 --madampar
-madam_lfi.par
+madam_lfi_{freq}.par
 --decalibrate
 /global/u2/z/zonca/p/cal/DX12_OSGN/C0{freq}-0000-DX12_OSGN-20170101.fits
 --calibrate
