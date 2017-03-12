@@ -3,7 +3,9 @@
 --freq
 {freq}
 --effdir
-/scratch3/scratchdirs/keskital/ffp10/fiducial_tod/foregrounds
+/scratch3/scratchdirs/zonca/ffp10/fiducial_tod/foregrounds
+--effdir_fsl
+/scratch3/scratchdirs/zonca/ffp10/fiducial_tod/foregrounds_fsl
 --effdir_pntg
 /project/projectdirs/planck/data/mission/lfi_ops_dx12
 --ringdb
