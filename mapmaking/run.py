@@ -38,8 +38,10 @@ MAPS_TEMPLATE = "mc_maps_template.par"
 for freq in freqs:
     for mc in mcs:
         #freq = int(sys.argv[1])
+
+        mc = "{:04}".format(mc)
         chtags = all_chtags[freq]
-        cal = "FFP10_FFP10CAL_{}".format(mc)
+        cal = "FFP10MC_{}".format(mc)
         #cal = "FFP10"
         tag = "{}_{}".format(freq, cal)
         maps_available = glob("ffp10_maps/{}/*/*{}*_map.fits".format(cal, freq))
