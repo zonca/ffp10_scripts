@@ -22,6 +22,8 @@ for freq in sorted(all_chtags.keys()):
     for mc in [10]:
     #for mc in [0]:
 
+        mc = "{:04}".format(mc)
+
         with open("ringsets_sim_mcnoise_dx12_template.par") as f:
             par = f.read()
 
