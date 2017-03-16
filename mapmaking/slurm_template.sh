@@ -8,8 +8,8 @@
 #SBATCH --time=00:24:00
 #SBATCH --job-name=maps_{tag}
 #SBATCH --export=ALL
-#SBATCH --output=logs/slurm-%j.out
-#SBATCH --error=logs/slurm-%j.out
+#SBATCH --output=logs/maps_{tag}_%j.out
+#SBATCH --error=logs/maps_{tag}_%j.out
 #SBATCH --mail-type=END,FAIL      # notifications for job done & fail
 #SBATCH --license=SCRATCH
 #SBATCH --license=project
