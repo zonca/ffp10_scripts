@@ -24,7 +24,7 @@ write_hits = F
 #write_base = T
 #write_mask = T
 #file_inmask = /project/projectdirs/planck/data/mission/SIAM/mask_gal_DX9_15pc_ps15_nested.fits
-file_inmask = /project/projectdirs/planck/data/mission/DPC_maps/dx9/lfi/MASKs/destripingmask_30.fits
+file_inmask = /global/project/projectdirs/planck/data/mission/DPC_maps/dx12/lfi/Masks/mask_madam_70.fits
 info = 3
 
 kfirst = T
