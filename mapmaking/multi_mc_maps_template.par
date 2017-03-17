@@ -19,7 +19,7 @@
 --flagmask
 255
 --out
-ffp10_maps/{cal}
+ffp10_maps/FFP10MC
 --madampar
 madam_lfi_{freq}.par
 --decalibrate
