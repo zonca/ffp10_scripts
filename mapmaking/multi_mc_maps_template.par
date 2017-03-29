@@ -11,9 +11,9 @@
 --dets
 {chtags}
 --ringfirst
-1
+{ringfirst}
 --ringlast
-44073
+{ringlast}
 --obtmask
 29
 --flagmask

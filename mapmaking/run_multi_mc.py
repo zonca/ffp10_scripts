@@ -24,37 +24,65 @@ freqs = [30]
 
 MAPS_TEMPLATE = "multi_mc_maps_template.par"
 
+all_splits = {
+    "survey1": {"ringfirst":"0", "ringlast":"5472"},
+    "survey2": {"ringfirst":"5473", "ringlast":"10942"},
+    "survey3": {"ringfirst":"10943", "ringlast":"16434"},
+    "survey4": {"ringfirst":"16435", "ringlast":"21460"},
+    "survey5": {"ringfirst":"21461", "ringlast":"27360"},
+    "survey6": {"ringfirst":"27361", "ringlast":"32704"},
+    "survey7": {"ringfirst":"32705", "ringlast":"38507"},
+    "survey8": {"ringfirst":"38508", "ringlast":"43931"},
+    "survey9": {"ringfirst":"43932", "ringlast":"45777"},
+    "year1": {"ringfirst":"0", "ringlast":"10942"},
+    "year2": {"ringfirst":"10943", "ringlast":"21460"},
+    "year3": {"ringfirst":"21461", "ringlast":"32704"},
+    "year4": {"ringfirst":"32705", "ringlast":"43931"},
+    "year12": {"ringfirst":"0", "ringlast":"21460"},
+    "year34": {"ringfirst":"21461", "ringlast":"43931"},
+    "year13": {"ringfirst":"0,21461", "ringlast":"10942,32704"},
+    "year24": {"ringfirst":"10943,32705", "ringlast":"21460,43931"},
+    "odd": {"ringfirst":"0,10943,21461,32705", "ringlast":"5472,16434,27360,38507"},
+    "even": {"ringfirst":"5473,16435,27361,38508", "ringlast":"10942,21460,32704,43931"},
+    "full": {"ringfirst":"0", "ringlast":"43931"}
+}
+
+selected_splits = ["full", "year12", "year34"]
+
 for freq in freqs:
+    for split in selected_splits:
 
-        chtags = all_chtags[freq]
-        cal = "FFP10MC_{0:04}"
-        tag = "{}".format(freq)
+            chtags = all_chtags[freq]
+            cal = "FFP10MC_{0:04}"
+            tag = "{}_{}".format(split, freq)
 
-        with open(MAPS_TEMPLATE) as f:
-            par = f.read()
-        par = par.format(
-                chtags=",".join(chtags), freq=freq,
-                cal=cal,
-        )
+            with open(MAPS_TEMPLATE) as f:
+                par = f.read()
+            par = par.format(
+                    chtags=",".join(chtags), freq=freq,
+                    cal=cal,
+                    ringfirst=split_rings[split]["ringfirst"],
+                    ringlast=split_rings[split]["ringlast"],
+            )
 
-        with open("temp/maps_{}.par".format(tag), 'w') as f:
-            f.write(par)
+            with open("temp/maps_{}.par".format(tag), 'w') as f:
+                f.write(par)
 
-        with open("slurm_template.sh") as f:
-            slurm = f.read()
+            with open("slurm_template.sh") as f:
+                slurm = f.read()
 
-        slurm_filename = "temp/slurm_{}.sh".format(tag)
+            slurm_filename = "temp/slurm_{}.sh".format(tag)
 
-        if nodes[freq] <= 256:
-            partition = "regular"
-            qos = "special_planck"
-        else:
-            partition = "regular"
-            qos = "premium"
-        partition_qos = """#SBATCH --partition={p}
-#SBATCH --qos={q}""".format(p=partition, q=qos)
+            if nodes[freq] <= 256:
+                partition = "regular"
+                qos = "special_planck"
+            else:
+                partition = "regular"
+                qos = "premium"
+            partition_qos = """#SBATCH --partition={p}
+    #SBATCH --qos={q}""".format(p=partition, q=qos)
 
-        with open(slurm_filename, 'w') as f:
-            f.write(slurm.format(nodes=nodes[freq], tag=tag, partition_qos=partition_qos))
+            with open(slurm_filename, 'w') as f:
+                f.write(slurm.format(nodes=nodes[freq], tag=tag, partition_qos=partition_qos))
 
-        subprocess.run(["sbatch", slurm_filename], check=True)
+            subprocess.run(["sbatch", slurm_filename], check=True)
