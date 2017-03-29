@@ -24,7 +24,7 @@ freqs = [30]
 
 MAPS_TEMPLATE = "multi_mc_maps_template.par"
 
-all_splits = {
+split_rings = {
     "survey1": {"ringfirst":"0", "ringlast":"5472"},
     "survey2": {"ringfirst":"5473", "ringlast":"10942"},
     "survey3": {"ringfirst":"10943", "ringlast":"16434"},
