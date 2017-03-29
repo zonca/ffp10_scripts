@@ -63,6 +63,7 @@ for freq in freqs:
                     cal=cal,
                     ringfirst=split_rings[split]["ringfirst"],
                     ringlast=split_rings[split]["ringlast"],
+                    madam_prefix="ffp10_{}".format(split)
             )
 
             with open("temp/maps_{}.par".format(tag), 'w') as f:

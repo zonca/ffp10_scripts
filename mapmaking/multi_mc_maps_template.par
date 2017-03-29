@@ -1,3 +1,5 @@
+--madam_prefix
+{madam_prefix}
 --rimo
 /project/projectdirs/planck/data/mission/SIAM/LFI_RIMO_DX11_R2.0_M_arm_pnt.fits
 --freq
