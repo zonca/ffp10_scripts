@@ -13,7 +13,7 @@ basis_order = 0
 
 #read_buffer_len = 10000
 
-#nsubchunk = 2
+nsubchunk = 2
 #isubchunk = 0
 
 write_map = T
