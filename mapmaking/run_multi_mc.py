@@ -47,7 +47,7 @@ split_rings = {
     "full": {"ringfirst":"0", "ringlast":"43931"}
 }
 
-selected_splits = ["full", "year12", "year34"]
+selected_splits = ["full", "year13", "year24"]
 
 for freq in freqs:
     for split in selected_splits:
