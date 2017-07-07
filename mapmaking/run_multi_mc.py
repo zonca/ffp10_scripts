@@ -54,7 +54,6 @@ split_rings = {
 }
 
 selected_splits = ["full"]#, "year13", "year24"]
-selected_splits = ["year13"]#, "year13", "year24"]
 
 
 MC_start = int(sys.argv[2])
