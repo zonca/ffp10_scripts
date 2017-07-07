@@ -1,11 +1,7 @@
 #!/bin/bash
 
-##SBATCH --partition=debug
-#SBATCH --partition=regular
-##SBATCH --qos=special_planck
-#SBATCH --qos=premium
+{partition_qos}
 #SBATCH --nodes={nodes}
-#SBATCH --time=00:24:00
 #SBATCH --job-name=maps_{tag}
 #SBATCH --export=ALL
 #SBATCH --output=logs/maps_{tag}_%j.out
@@ -14,7 +10,7 @@
 #SBATCH --license=SCRATCH
 #SBATCH --license=project
 
-ulimit -c unlimited
+ulimit -c 0
 
 export OMP_NUM_THREADS=4
 let ntasktot=24*{nodes}/$OMP_NUM_THREADS

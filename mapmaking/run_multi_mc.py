@@ -13,14 +13,20 @@ all_chtags = {
 }
 
 nodes = {
-    30 : 128,
-    44 : 128,
+    30 : 96,
+    44 : 160,
     70 : 512
+}
+nodes = {
+    30 : 64,
+    44 : 85,
+    70 : 350
 }
 
 folder = os.environ["SCRATCH"] + "/ringsets/"
 
-freqs = [30]
+freqs = [30, 44, 70]
+freqs = [int(sys.argv[1])]
 
 MAPS_TEMPLATE = "multi_mc_maps_template.par"
 
@@ -47,14 +53,20 @@ split_rings = {
     "full": {"ringfirst":"0", "ringlast":"43931"}
 }
 
-selected_splits = ["full", "year13", "year24"]
+selected_splits = ["full"]#, "year13", "year24"]
+selected_splits = ["year13"]#, "year13", "year24"]
+
+
+MC_start = int(sys.argv[2])
+MC_count = int(sys.argv[3])
+
 
 for freq in freqs:
     for split in selected_splits:
 
             chtags = all_chtags[freq]
             cal = "FFP10MC_{0:04}"
-            tag = "{}_{}".format(split, freq)
+            tag = "{}_{}_{}".format(split, freq, MC_start)
 
             with open(MAPS_TEMPLATE) as f:
                 par = f.read()
@@ -63,7 +75,9 @@ for freq in freqs:
                     cal=cal,
                     ringfirst=split_rings[split]["ringfirst"],
                     ringlast=split_rings[split]["ringlast"],
-                    madam_prefix="ffp10_{}".format(split)
+                    madam_prefix="ffp10_{}".format(split),
+                    MC_start=MC_start,
+                    MC_count=MC_count
             )
 
             with open("temp/maps_{}.par".format(tag), 'w') as f:
@@ -77,11 +91,17 @@ for freq in freqs:
             if nodes[freq] <= 256:
                 partition = "regular"
                 qos = "special_planck"
+                hours=12
+                account = "planck"
             else:
                 partition = "regular"
-                qos = "premium"
+                qos = "normal"
+                hours=7
+                account = "m2798"
             partition_qos = """#SBATCH --partition={p}
-    #SBATCH --qos={q}""".format(p=partition, q=qos)
+#SBATCH --qos={q}
+#SBATCH --time={hours}:00:00
+#SBATCH --account={account}""".format(p=partition, q=qos, hours=hours, account=account)
 
             with open(slurm_filename, 'w') as f:
                 f.write(slurm.format(nodes=nodes[freq], tag=tag, partition_qos=partition_qos))
