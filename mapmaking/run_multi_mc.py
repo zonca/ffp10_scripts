@@ -95,7 +95,7 @@ for freq in freqs:
             else:
                 partition = "regular"
                 qos = "normal"
-                hours=7
+                hours=int( (15+MC_count*6) / 60 + 1)
                 account = "m2798"
             partition_qos = """#SBATCH --partition={p}
 #SBATCH --qos={q}
