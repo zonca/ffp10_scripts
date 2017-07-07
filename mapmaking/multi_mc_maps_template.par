@@ -21,7 +21,7 @@
 --flagmask
 255
 --out
-ffp10_maps/FFP10MC
+ffp10_maps/FFP10MCS
 --madampar
 madam_lfi_{freq}.par
 --decalibrate
@@ -34,3 +34,4 @@ madam_lfi_{freq}.par
 {MC_start}
 --MC_count
 {MC_count}
+--dipole

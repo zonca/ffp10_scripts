@@ -65,7 +65,7 @@ for freq in freqs:
     for split in selected_splits:
 
             chtags = all_chtags[freq]
-            cal = "FFP10MC_{0:04}"
+            cal = "FFP10MCS_{0:04}"
             tag = "{}_{}_{}".format(split, freq, MC_start)
 
             with open(MAPS_TEMPLATE) as f:
