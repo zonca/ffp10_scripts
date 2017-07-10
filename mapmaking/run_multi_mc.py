@@ -17,11 +17,11 @@ nodes = {
     44 : 160,
     70 : 512
 }
-nodes = {
-    30 : 64,
-    44 : 85,
-    70 : 350
-}
+#nodes = {
+#    30 : 64,
+#    44 : 85,
+#    70 : 350
+#}
 
 folder = os.environ["SCRATCH"] + "/ringsets/"
 
