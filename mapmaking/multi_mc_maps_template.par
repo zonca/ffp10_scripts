@@ -5,7 +5,7 @@
 --freq
 {freq}
 --effdir
-/project/projectdirs/planck/data/mission/lfi_ops_dx12
+/scratch3/scratchdirs/zonca/ffp10/fiducial_tod/foregrounds2
 --effdir_pntg
 /project/projectdirs/planck/data/mission/lfi_ops_dx12
 --ringdb
@@ -21,7 +21,7 @@
 --flagmask
 255
 --out
-ffp10_maps/FFP10MCS
+ffp10_maps/FFP10MCS_SKY
 --madampar
 madam_lfi_{freq}.par
 --decalibrate
@@ -35,3 +35,6 @@ madam_lfi_{freq}.par
 --MC_count
 {MC_count}
 --dipole
+--read_eff
+--effdir_fsl
+/scratch3/scratchdirs/zonca/ffp10/fiducial_tod/foregrounds2_fsl
