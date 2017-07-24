@@ -36,5 +36,3 @@ madam_lfi_{freq}.par
 {MC_count}
 --dipole
 --read_eff
---effdir_fsl
-/scratch3/scratchdirs/zonca/ffp10/fiducial_tod/foregrounds2_fsl
