@@ -38,7 +38,6 @@ cglimit = 1e-12
 
 nside_submap = 16
 nside_cross = 1024
-run_submap_test = F
 precond_width = 10
 
 unit_tod = K_CMB
