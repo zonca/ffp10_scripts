@@ -5,7 +5,7 @@
 --freq
 {freq}
 --effdir
-/scratch3/scratchdirs/zonca/ffp10/fiducial_tod/foregrounds2
+/global/cscratch1/sd/zonca/foregrounds2
 --effdir_pntg
 /project/projectdirs/planck/data/mission/lfi_ops_dx12
 --ringdb
